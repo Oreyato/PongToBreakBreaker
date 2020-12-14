@@ -42,6 +42,8 @@ void Update() {
             }
 
             ball.SetX(screenWidth / 2); //remplacer par position relative au paddle (+ centrer paddle pourquoi pas) + ajout option clicker sur espace pour renvoyer la balle
+
+
             playerLivesText->SetText2(to_string(playerLives));
         }
         //--------------------------------------------------------------------
@@ -106,7 +108,7 @@ int main(int argc, char* argv[])
     SetTargetFPS(60);
 
     //Assets -------------------------------------------------------------
-    ball = Ball(100, 100, 32, 32, 5);
+    ball = Ball(100, 100, 32, 32, 5, false);
     paddle = Paddle(10, 180, 32, 128, 5);
     //--------------------------------------------------------------------
 

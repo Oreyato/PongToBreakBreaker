@@ -12,9 +12,11 @@ Ball::Ball() {
 
 	speedX = 0;
 	speedY = 0;
+
+	released = !released;
 }
 
-Ball::Ball(int xP, int yP, int heightB, int widthB, int speedB) : x(xP), y(yP), height(heightB), width(widthB), speedX(speedB), speedY(speedB) { // Constructor definition outside the class
+Ball::Ball(int xP, int yP, int heightB, int widthB, int speedB, bool releasedB) : x(xP), y(yP), height(heightB), width(widthB), speedX(speedB), speedY(speedB), released(releasedB) { // Constructor definition outside the class
 
 }
 
@@ -37,24 +39,33 @@ void Ball::VerticalBounce(int newY) {
 	y = newY;
 }
 
+
+bool Ball::Released(bool releasedB) { //Pressing spacebar to release ball
+	if (IsKeyDown(KEY_SPACE)) {
+		return true;
+	}
+	else return false;
+}
+
 void Ball::Update() {
 	int screenW = GetScreenWidth();
 	int screenH = GetScreenHeight();
 
-	x += speedX;
-	y += speedY;
+	if (Released(releasedB)) {
+		x += speedX;
+		y += speedY;
 
-	if (x > screenW - width) {
-		HorizontalBounce(screenW - width);
-	}
+		if (x > screenW - width) {
+			HorizontalBounce(screenW - width);
+		}
 
-	if (y < 0) {
-		VerticalBounce(0);
+		if (y < 0) {
+			VerticalBounce(0);
+		}
+		if (y > screenH - height) {
+			VerticalBounce(screenH - height);
+		}
 	}
-	if (y > screenH - height) {
-		VerticalBounce(screenH - height);
-	}
-
 }
 
 int Ball::GetX() const {

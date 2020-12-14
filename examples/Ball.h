@@ -8,7 +8,7 @@
 class Ball {
 public:
 	Ball();
-	Ball(int xP, int yP, int heightB, int widthB, int speedB); //Constructor declaration
+	Ball(int xP, int yP, int heightB, int widthB, int speedB, bool releasedB); //Constructor declaration
 	~Ball(); //Destructor (to free memory, /!\ it is also a binary operator, in a "if" context for example)
 
 	RectangleAABB GetRect();
@@ -21,19 +21,23 @@ public:
 
 	int GetWidth() const;
 
+	bool Released(bool releasedB);
+
 	void Update();
 	void Draw();
 
 private:
 	int x;
 	int y;
-	int size;
 
+	int size;
 	int height;
 	int width;
 
 	int speedX;
 	int speedY;
+
+	bool released;
 };
 
 #endif
