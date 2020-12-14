@@ -42,7 +42,7 @@ void Update() {
             }
 
             ball.SetX(screenWidth / 2); //remplacer par position relative au paddle (+ centrer paddle pourquoi pas) + ajout option clicker sur espace pour renvoyer la balle
-
+            ball.Released(0); //0 -> will stop the ball from moving around
 
             playerLivesText->SetText2(to_string(playerLives));
         }

@@ -21,7 +21,7 @@ public:
 
 	int GetWidth() const;
 
-	bool Released(bool releasedB);
+	bool Released(int releasedB);
 
 	void Update();
 	void Draw();
@@ -37,7 +37,7 @@ private:
 	int speedX;
 	int speedY;
 
-	bool released;
+	int released;
 };
 
 #endif
