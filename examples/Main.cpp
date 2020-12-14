@@ -19,28 +19,42 @@ int screenHeight = 450;
 int playerPoints = 0;
 int playerLives = 3;
 
+int inGame = 1;
+
 void Update() {
-    ball.Update();
-    paddle.Update();
-
-    //Points -------------------------------------------------------------
-    if (ball.GetX() < 0) {
-        --playerLives;
-        ball.SetX(screenWidth / 2); //remplacer par position relative au paddle (+ centrer paddle pourquoi pas) + ajout option clicker sur espace pour renvoyer la balle
-        playerLivesText->SetText2(to_string(playerLives));
+    if (inGame == 0) { //Menu ------------------------------------------------
+        //then menu
     }
-    //--------------------------------------------------------------------
+    else if (inGame == 1) { //In game ----------------------------------------
 
-    //Collisions ---------------------------------------------------------
-    RectangleAABB ballRect = ball.GetRect();
-    RectangleAABB paddleRect = paddle.GetRect();
+        ball.Update();
+        paddle.Update();
 
-    bool colliding = collision.AABBCollision(ballRect, paddleRect);
+        //Points -------------------------------------------------------------
+        if (ball.GetX() < 0) {
+            --playerLives;
+            ball.SetX(screenWidth / 2); //remplacer par position relative au paddle (+ centrer paddle pourquoi pas) + ajout option clicker sur espace pour renvoyer la balle
+            playerLivesText->SetText2(to_string(playerLives));
+        }
+        //--------------------------------------------------------------------
 
-    if (colliding) {
-        ball.HorizontalBounce(paddleRect.x + paddleRect.width);
+        //Collisions ---------------------------------------------------------
+        RectangleAABB ballRect = ball.GetRect();
+        RectangleAABB paddleRect = paddle.GetRect();
+
+        bool colliding = collision.AABBCollision(ballRect, paddleRect);
+
+        if (colliding) {
+            ball.HorizontalBounce(paddleRect.x + paddleRect.width);
+        }
+        //--------------------------------------------------------------------
     }
-    //--------------------------------------------------------------------
+    else if (inGame == 3) { //End menu win------------------------------------
+        //then end menu win
+    }
+    else if (inGame == 4) { //End menu lose-----------------------------------
+        //then end menu lose
+    }
 }
 
 void Draw() {
