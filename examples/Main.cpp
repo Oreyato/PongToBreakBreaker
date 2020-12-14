@@ -10,14 +10,14 @@ Ball ball;
 Paddle paddle;
 Collisions collision;
 
+Text2* playerPointsText = nullptr;
+Text2* playerLivesText = nullptr;
+
 int screenWidth = 800;
 int screenHeight = 450;
 
 int playerPoints = 0;
 int playerLives = 3;
-
-Text2 playerPointsText = Text2(100, 100, to_string(playerPoints), 20, LIGHTGRAY);
-Text2 playerLivesText = Text2(screenWidth - 100, 100, to_string(playerLives), 20, LIGHTGRAY);
 
 void Update() {
     ball.Update();
@@ -27,7 +27,7 @@ void Update() {
     if (ball.GetX() < 0) {
         --playerLives;
         ball.SetX(screenWidth / 2); //remplacer par position relative au paddle (+ centrer paddle pourquoi pas) + ajout option clicker sur espace pour renvoyer la balle
-        playerLivesText.SetText2(to_string(playerLives));
+        playerLivesText->SetText2(to_string(playerLives));
     }
     //--------------------------------------------------------------------
 
@@ -48,8 +48,8 @@ void Draw() {
 
     ClearBackground(BLACK);
 
-    playerPointsText.Draw();
-    playerLivesText.Draw();
+    playerPointsText->Draw();
+    playerLivesText->Draw();
 
     ball.Draw();
     paddle.Draw();
@@ -66,6 +66,9 @@ int main(int argc, char* argv[])
     ball = Ball(100, 100, 32, 32, 5);
     paddle = Paddle(10, 180, 32, 128, 5);
 
+    playerPointsText = new Text2(100, 100, to_string(playerPoints), 20, LIGHTGRAY);
+    playerLivesText = new Text2(screenWidth - 100, 100, to_string(playerLives), 20, LIGHTGRAY);
+
     while (!WindowShouldClose())
     {
         Update();
@@ -73,6 +76,11 @@ int main(int argc, char* argv[])
     }
 
     CloseWindow();
+
+    //Delete [memory security]--------------------------------------------
+    delete playerLivesText;
+    delete playerPointsText;
+    //--------------------------------------------------------------------
 
     return 0;
 }
