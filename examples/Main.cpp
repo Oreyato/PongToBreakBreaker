@@ -42,6 +42,8 @@ void Update() {
             }
 
             ball.SetX(screenWidth / 2); //remplacer par position relative au paddle (+ centrer paddle pourquoi pas) + ajout option clicker sur espace pour renvoyer la balle
+
+
             playerLivesText->SetText2(to_string(playerLives));
         }
         //--------------------------------------------------------------------
@@ -74,26 +76,26 @@ void Draw() {
     ClearBackground(BLACK);
 
     switch (inGame) { //Game loop --------------------------------------------
-        case 1 :
-            playerPointsText->Draw();
-            playerLivesText->Draw();
+    case 1:
+        playerPointsText->Draw();
+        playerLivesText->Draw();
 
-            ball.Draw();
-            paddle.Draw();
+        ball.Draw();
+        paddle.Draw();
 
-            break;
-        case 2 :
-            outComeText->Draw();
-            finalPointsTexts->Draw();
+        break;
+    case 2:
+        outComeText->Draw();
+        finalPointsTexts->Draw();
 
-            break;
-        case 3 :
-            outComeText->Draw();
-            finalPointsTexts->Draw();
+        break;
+    case 3:
+        outComeText->Draw();
+        finalPointsTexts->Draw();
 
-            break;
-        default:
-            break;
+        break;
+    default:
+        break;
     }
 
     EndDrawing();
@@ -106,7 +108,7 @@ int main(int argc, char* argv[])
     SetTargetFPS(60);
 
     //Assets -------------------------------------------------------------
-    ball = Ball(100, 100, 32, 32, 5);
+    ball = Ball(100, 100, 32, 32, 5, false);
     paddle = Paddle(10, 180, 32, 128, 5);
     //--------------------------------------------------------------------
 
