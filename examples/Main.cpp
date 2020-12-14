@@ -74,26 +74,26 @@ void Draw() {
     ClearBackground(BLACK);
 
     switch (inGame) { //Game loop --------------------------------------------
-        case 1 :
-            playerPointsText->Draw();
-            playerLivesText->Draw();
+    case 1:
+        playerPointsText->Draw();
+        playerLivesText->Draw();
 
-            ball.Draw();
-            paddle.Draw();
+        ball.Draw();
+        paddle.Draw();
 
-            break;
-        case 2 :
-            outComeText->Draw();
-            finalPointsTexts->Draw();
+        break;
+    case 2:
+        outComeText->Draw();
+        finalPointsTexts->Draw();
 
-            break;
-        case 3 :
-            outComeText->Draw();
-            finalPointsTexts->Draw();
+        break;
+    case 3:
+        outComeText->Draw();
+        finalPointsTexts->Draw();
 
-            break;
-        default:
-            break;
+        break;
+    default:
+        break;
     }
 
     EndDrawing();
