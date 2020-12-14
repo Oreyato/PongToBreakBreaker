@@ -1,0 +1,4 @@
+﻿G:\C++\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (C:\raylib\raylib\projects\VS2017_PongToBB\\obj\x64\Debug.DLL\) contains files shared from another project (raylib.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+G:\C++\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (C:\raylib\raylib\projects\VS2017_PongToBB\\obj\x64\Debug.DLL\) contains files shared from another project (core_basic_window_cpp.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Main.cpp
+  core_basic_window_cpp.vcxproj -> C:\raylib\raylib\projects\VS2017_PongToBB\bin\x64\Debug.DLL\core_basic_window_cpp.exe

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Collisions.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Paddle.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Text2.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include=".h">
+      <UniqueIdentifier>{54369aee-d1a9-4ec2-8a9d-c2db092635dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include=".cpp">
+      <UniqueIdentifier>{f38e83cc-fc86-4aad-a399-f6d72d238c2c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RectangleAABB.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Collisions.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Paddle.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Text2.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
